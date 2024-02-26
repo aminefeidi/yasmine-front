@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <!-- start page title -->
+  <div class="row">
+    <div class="col-xl-8">
+
+      <h1 class="mb-4">Statistics</h1>
+
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="d-sm-flex flex-wrap">
+            <h4 class="card-title mb-4">Estimation by user story</h4>
+            
+          </div>
+          <apx-chart
+          *ngIf="estimationByStoryChart"
+            dir="ltr"
+            class="apex-charts"
+            [chart]="estimationByStoryChart.chart"
+            [series]="estimationByStoryChart.series"
+            [legend]="estimationByStoryChart.legend"
+            [colors]="estimationByStoryChart.colors"
+            [fill]="estimationByStoryChart.fill"
+            [dataLabels]="estimationByStoryChart.dataLabels"
+            [xaxis]="estimationByStoryChart.xaxis"
+            [plotOptions]="estimationByStoryChart.plotOptions"
+          >
+          </apx-chart>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="d-sm-flex flex-wrap">
+            <h4 class="card-title mb-4">Estimation by Project</h4>
+          </div>
+          <apx-chart
+          *ngIf="estimationByProjectChart"
+            dir="ltr"
+            class="apex-charts"
+            [chart]="estimationByProjectChart.chart"
+            [series]="estimationByProjectChart.series"
+            [legend]="estimationByProjectChart.legend"
+            [colors]="estimationByProjectChart.colors"
+            [fill]="estimationByProjectChart.fill"
+            [dataLabels]="estimationByProjectChart.dataLabels"
+            [xaxis]="estimationByProjectChart.xaxis"
+            [plotOptions]="estimationByProjectChart.plotOptions"
+          >
+          </apx-chart>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="d-sm-flex flex-wrap">
+            <h4 class="card-title mb-4">Estimation by session</h4>
+          </div>
+
+          <apx-chart
+          *ngIf="estimationBySessionChart"
+            dir="ltr"
+            class="apex-charts"
+            [chart]="estimationBySessionChart.chart"
+            [series]="estimationBySessionChart.series"
+            [legend]="estimationBySessionChart.legend"
+            [colors]="estimationBySessionChart.colors"
+            [fill]="estimationBySessionChart.fill"
+            [dataLabels]="estimationBySessionChart.dataLabels"
+            [xaxis]="estimationBySessionChart.xaxis"
+            [plotOptions]="estimationBySessionChart.plotOptions"
+          >
+          </apx-chart>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- container-fluid -->

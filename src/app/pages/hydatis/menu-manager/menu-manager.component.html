@@ -1,0 +1,53 @@
+<div class="container-fluid">
+
+  <div class="row">
+
+
+        <h2 class="mb-4">Menu Manager</h2>
+
+      <div *ngFor="let role of roles" class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex align-items-start">
+                  <h4 class="card-title mb-4">{{role}}</h4>
+                </div>
+             
+                <div class="table-responsive">
+                  <table class="table table-nowrap align-middle mb-0">
+                    <tbody>
+                      <tr *ngFor="let menu of menus">
+                        <td style="width: 40px">
+                          <div class="form-check font-size-16">
+                            <input
+                              type="checkbox"
+                              class="form-check-input"
+                              id="customCheck{{ menus.id }}"
+                              [disabled]="isLoading"
+                              [checked]="menu.roles?.includes(role)"
+                              (change)="updateRoleMenuAssociation(role, menu.id, $event.target.checked)"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="customCheck{{ menus.id }}"
+                            ></label>
+                          </div>
+                        </td>
+                        <td>
+                          <h5 class="text-truncate font-size-14 m-0">
+                            <a href="javascript: void(0);" class="text-dark">{{
+                              menu.label
+                            }}</a>
+                          </h5>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+      </div>
+
+  </div>
+
+</div>
+<!-- end col -->
