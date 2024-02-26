@@ -24,7 +24,7 @@ export class DefaultComponent implements OnInit {
       this.estimationByStoryChart = this.deepCopy(defaultBarChart);
       if (data) {
         this.estimationByStoryChart.xaxis = {
-          categories: Object.keys(data),
+          categories: this.getStoryNames(Object.keys(data)),
         };
         this.estimationByStoryChart.series = [
           {
@@ -39,7 +39,7 @@ export class DefaultComponent implements OnInit {
       this.estimationByProjectChart = this.deepCopy(defaultBarChart);
       if (data) {
         this.estimationByProjectChart.xaxis = {
-          categories: Object.keys(data),
+          categories: this.getProjectNames(Object.keys(data)),
         };
         this.estimationByProjectChart.series = [
           {
@@ -54,7 +54,7 @@ export class DefaultComponent implements OnInit {
       this.estimationBySessionChart = this.deepCopy(defaultBarChart);
       if (data) {
         this.estimationBySessionChart.xaxis = {
-          categories: Object.keys(data),
+          categories: this.getSessionNames(Object.keys(data)),
         };
         this.estimationBySessionChart.series = [
           {
@@ -68,5 +68,17 @@ export class DefaultComponent implements OnInit {
 
   private deepCopy(obj: any) {
     return JSON.parse(JSON.stringify(obj));
+  }
+
+  getProjectNames(ids: string[]) : string[] {
+    return ids.map((id) => `prject ${id}`);
+  }
+
+  getStoryNames(ids: string[]) : string[] {
+    return ids.map((id) => `story ${id}`);
+  }
+
+  getSessionNames(ids: string[]) : string[] {
+    return ids.map((id) => `session ${id}`);
   }
 }
